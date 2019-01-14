@@ -1,0 +1,35 @@
+body {
+    background: url("../images/background.jpg")
+}
+.game-section {
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    margin-top: 2.5%;
+    background-color: rgb(109, 77, 161);
+    border: 1px black solid;
+    border-radius: 5px; 
+}
+.logo {
+    position: relative;
+    padding: 105px;
+    margin-left: 12%;
+    width: 75%;
+    background: url("../images/logo-2.png");
+}
+#game-text {
+    margin-left: 16.5%;
+    color: white;
+    margin-top: 2%;
+}
+#game-text2 {
+    margin-left: 30%;
+    color: white;
+}
+.btn {
+    margin-left: 34.5%;
+    margin-top: 5%;
+    width: 30%;
+    height: 10%;
+    font-size: 25px;
+}
