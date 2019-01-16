@@ -2,8 +2,7 @@ body {
     background: url("../images/background.jpg")
 }
 .game-section {
-    width: 800px;
-    height: 600px;
+    width: 800px;   
     margin: auto;
     margin-top: 2.5%;
     background-color: rgb(109, 77, 161);
@@ -32,4 +31,30 @@ body {
     width: 30%;
     height: 10%;
     font-size: 25px;
+    margin-bottom: 20%;
+}
+.hidden {
+    display: none;
+}
+.timer {
+    font-size: 35px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+h2 {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 5px, 5px, 5px, black;
+}
+#questions {
+    color: white;
+    margin-top: 15px;
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+.submit {
+    margin-bottom: 10%;
 }
