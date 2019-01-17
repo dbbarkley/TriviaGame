@@ -58,3 +58,13 @@ h2 {
 .submit {
     margin-bottom: 10%;
 }
+.answers {
+    margin-bottom: 20px;
+}
+#results {
+    color: white;
+    margin-top: 15px;
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+}

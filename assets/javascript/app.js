@@ -1,5 +1,6 @@
 
 var quizContainer = document.getElementById("questions");
+var resultsContainer = document.getElementById("results");
 
 var myQuestions = [
 	{
@@ -10,7 +11,6 @@ var myQuestions = [
 			c: 'Pistol Pete',
 			d: 'Star Lord'
 		},
-		correctAnswer: 'd'
 	},
 	{
 		question: "In the film, Peter Quill was raised by which group of thieves and smugglers?",
@@ -20,7 +20,6 @@ var myQuestions = [
 			c: 'The Avengers',
 			d: 'None of them'
 		},
-		correctAnswer: 'a'
     },
     {
 		question: "Which prison are the gang taken to?",
@@ -30,7 +29,6 @@ var myQuestions = [
 			c: 'The Kyln',
 			d: 'The Daeth Star'
 		},
-		correctAnswer: 'c'
     },
     {
 		question: "Which planet does Ronan The Accuser attack at the end of the first movie?",
@@ -40,7 +38,6 @@ var myQuestions = [
 			c: 'Endor',
 			d: 'Xandar'
 		},
-		correctAnswer: 'd'
 	},	{
 		question: "Groot is a Dutch word, meaning...",
 		answers: {
@@ -49,7 +46,6 @@ var myQuestions = [
 			c: 'Big',
 			d: 'Wood'
 		},
-		correctAnswer: 'c'
     },
     {
 		question: "Who in the mining colony, do they bring the orb to?",
@@ -59,7 +55,6 @@ var myQuestions = [
 			c: 'The Punisher',
 			d: 'The Joker'
 		},
-		correctAnswer: 'a'
     },
     {
 		question: "What is the name of Ronan's large ship?",
@@ -69,7 +64,6 @@ var myQuestions = [
 			c: 'The Dark Aster',
 			d: 'The Falcon'
 		},
-		correctAnswer: 'c'
     },
     {
 		question: "After a medical scan, what does the Nova Prime tell Peter about himself?",
@@ -79,20 +73,44 @@ var myQuestions = [
 			c: 'He has two hearts',
 			d: "He's related to Gamora"
 		},
-		correctAnswer: 'b'
 	}
 ];
 
 $(".btn").click(function () {
 		$(".main-div").hide();
-		$()
 		startGame(myQuestions, quizContainer);
+		run();
 });
+// Timer functions ===================================================================
+var timer = 20;
+var intervalId;
 
+function run() {
+	clearInterval(intervalId);
+	intervalId = setInterval(decrement, 1000);
+}
+	
+function decrement() {
+	timer--;
+	//  Show the number
+	$("#show-timer").html("<h2>Time remaining: " + timer + "</h2>");
+		if (timer === 0) {
+			stop();
+		}
+}
+	
+function stop() {
+	clearInterval(intervalId);
+		$("#show-timer").hide();
+		$("#questions").hide();
+	showResults();
+}
 
+// Main game function.
+function startGame () {	
+// Generate questions ================================================================
 
-function startGame (myQuestions, quizContainer) {
-	// we'll need a place to store the output and the answer choices
+	// Store output and the answer choices
 	var output = [];
 	var answers;
 
@@ -105,7 +123,7 @@ function startGame (myQuestions, quizContainer) {
 		// for each available answer...
 		for(letter in myQuestions[i].answers){
 
-			// ...add an html radio button
+			// add an html radio button
 			answers.push( 
 				'<label>'
 					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
@@ -122,13 +140,46 @@ function startGame (myQuestions, quizContainer) {
 			+ '<div class="answers">' + answers.join('') + '</div>'
 		);
 	}
-
 	// finally combine our output list into one string of html and put it on the page
 	quizContainer.innerHTML = output.join('');
 }
 
 
+// Show results function =============================================================
 
+function showResults () {
+		// gather answer containers from our quiz
+		//$("#results").append("<h3>Incorrect answers: 0</h3>");
+		//var answerContainers = myQuestions.answers;
+		var numCorrect = 0;
+		var numIncorrect = 0;
+		var numUnanswered = 0;
 
+		var total = 8;
+		var userAnswers = [
+		$("input[name=question0]:checked").val(),
+		$("input[name=question1]:checked").val(),
+		$("input[name=question2]:checked").val(),
+		$("input[name=question3]:checked").val(),
+		$("input[name=question4]:checked").val(),
+		$("input[name=question5]:checked").val(),
+		$("input[name=question6]:checked").val(),
+		$("input[name=question7]:checked").val(),
+		];
+		
+		console.log(userAnswers);
 
+		var answers = ["d", "a", "c", "d", "c", "a", "c", "b"]
+		console.log(answers);
+		for(var i = 0; i < total; i++) {
 
+			if (userAnswers[i] === answers[i]) {
+				numCorrect++;
+				$("#results").html("<h3>Correct answers: "+numCorrect+"</h3>");
+			}/*else if(userAnswers[i] !== answers[i]) {
+					numIncorrect++;
+					$("#results").html("<h3>Correct answers: "+numIncorrect+"</h3>");
+				}*/
+			}
+
+		}
