@@ -25,7 +25,7 @@ body {
     margin-left: 30%;
     color: white;
 }
-.btn {
+.start-game {
     margin-left: 34.5%;
     margin-top: 5%;
     width: 30%;
@@ -55,16 +55,17 @@ h2 {
     font-size: 25px;
     text-align: center;
 }
-.submit {
-    margin-bottom: 10%;
-}
-.answers {
-    margin-bottom: 20px;
-}
 #results {
     color: white;
     margin-top: 15px;
     padding: 20px;
     font-size: 25px;
     text-align: center;
+}
+.done {
+    margin-top: 10%;
+    width: 30%;
+    height: 60px;
+    font-size: 25px;
+    margin-bottom: 10%;
 }

@@ -6,7 +6,6 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,23 +14,21 @@
 <body>
 
     <div class="game-section">
-            <div class="logo">
-                </div>
-                <div class="main-div">
-                <h3 id="game-text">
-                    Click the buton below to begin the Gardians</h3>
+        <div class="logo"></div>
+            <div class="main-div">
+                <h3 id="game-text">Click the buton below to begin the Gardians</h3>
                     <h3 id="game-text2">of the Galaxy Trivia Game!</h3>
-                <button type="button" class="btn btn-info btn-lg">Start Game!</button>
+                <button type="button" class="btn btn-info btn-lg start-game">Start Game!</button>
             </div>
-            <div id="show-timer"></div>
+
+        <div id="show-timer"></div>
             <div id="questions"></div>
-            <div id="results"></div>
+                <div id="results" class="hidden">
+                    <p id="correct">Correct Answers: 0</p>
+                        <p id="incorrect">Incorrect Answers: 0</p>
+                    <p id="unanswered">Unanswered: 0</p>
+                </div>
     </div>
-
-   
-
-
-
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
