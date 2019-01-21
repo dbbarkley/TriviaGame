@@ -77,43 +77,38 @@ var myQuestions = [
 ];
 
 // Timer functions ===================================================================
-var timer = 1000;
+var timer = 45;
 var intervalId;
 
-function runTimer() {
+function runTimer () {
+	$("#show-timer").html("<h2>Time remaining: " + timer + " Seconds</h2>");
 	clearInterval(intervalId);
 	intervalId = setInterval(decrement, 1000);
-}	
-function decrement() {
+};
+function decrement () {
 	timer--;
-	//  Show the number
-	$("#show-timer").html("<h2>Time remaining: " + timer + "</h2>");
+	$("#show-timer").html("<h2>Time remaining: " + timer + " Seconds</h2>");
 		if (timer === 0) {
 			stop();
 		}
-}
-function stop() {
+};
+function stop () {
 	clearInterval(intervalId);
 		$("#show-timer").hide();
 		$("#questions").hide();
-	showResults();
-}
-
+		showResults();
+};
 // Generate questions ================================================================
 function startGame () {	
-	// Store output and the answer choices
 	var output = [];
 	var possibleAnswers;
 
-	// for each question...
+	// for each question
 	for(var i=0; i < myQuestions.length; i++){
-		
 		// reset the list of possibleAnswers
 		possibleAnswers = [];
-
-		// for each available answer...
+		// for each available answer
 		for(letter in myQuestions[i].possibleAnswers){
-
 			// add an html radio button
 			possibleAnswers.push( 
 				'<label>'
@@ -123,13 +118,11 @@ function startGame () {
 				+'</label>' + "<br>" 
 			);
 		}
-
 		// add this question and its possibleAnswers to the output
 		output.push(
 			"<hr>" +
 			'<div class="question">' + myQuestions[i].question + '</div>'
-			+ '<div class="possibleAnswers">' + possibleAnswers.join('') + '</div>' 
-			
+			+ '<div class="possibleAnswers">' + possibleAnswers.join('') + '</div>' 	
 		);
 	}
 	// combine our output list into one string of html and put it on the page
@@ -138,10 +131,7 @@ function startGame () {
 	var btn = $('<button type="button">Done</button>').addClass("btn btn-info btn-lg done");
 	$("#questions").append(btn);
 };
-
-
 // Show results function =============================================================
-
 function showResults () {
 	// Remove hidden class to show 'results'
 	$("#results").removeClass("hidden");
@@ -177,9 +167,7 @@ function showResults () {
 						};
 	};
 };
-
 // Click events =====================================================================
-
 $(".start-game").click(function () {
 	$(".main-div").hide();
 	$("#questions").show();
@@ -187,14 +175,8 @@ $(".start-game").click(function () {
 	startGame();
 });
 
-$(document.body).on("click", ".done", function () {
+$(document).on("click", ".done", function () {
 	$("#show-timer").hide();
 	$("#questions").hide();
-	showResults();
-})
-
-//$(".try-again").click(function () {
-//$("#results").hide();
-//startGame();
-//runTimer();
-//});
+	stop();
+});

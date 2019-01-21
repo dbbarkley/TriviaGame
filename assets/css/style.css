@@ -1,3 +1,4 @@
+/* General page layout */
 body {
     background: url("../images/background.jpg")
 }
@@ -33,6 +34,7 @@ body {
     font-size: 25px;
     margin-bottom: 20%;
 }
+/* Question Page */
 .hidden {
     display: none;
 }
@@ -55,13 +57,6 @@ h2 {
     font-size: 25px;
     text-align: center;
 }
-#results {
-    color: white;
-    margin-top: 15px;
-    padding: 20px;
-    font-size: 25px;
-    text-align: center;
-}
 .done {
     margin-top: 10%;
     width: 30%;
@@ -69,3 +64,12 @@ h2 {
     font-size: 25px;
     margin-bottom: 10%;
 }
+/* Results Page*/
+#results {
+    color: white;
+    margin-top: 15px;
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+/* Media Queries*/
