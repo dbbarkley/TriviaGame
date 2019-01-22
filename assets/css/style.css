@@ -18,7 +18,7 @@ body {
     background: url("../images/logo-2.png");
 }
 #game-text {
-    margin-left: 16.5%;
+    margin-left: 15%;
     color: white;
     margin-top: 2%;
 }
@@ -82,7 +82,7 @@ h2 {
         width: 91%;
     }
     #game-text {
-        margin-left: 9.5%;
+        margin-left: 8%;
     }
     #game-text2 {
         margin-left: 25%; 
@@ -90,6 +90,7 @@ h2 {
 }
 @media screen and (max-width: 580px) {
     .game-section {
+        margin-top: 15%;
         width: 450px;
     }
     .logo {
@@ -99,7 +100,7 @@ h2 {
         padding: 75px;
     }
     #game-text {
-        margin-left: 8.5%;
+        margin-left: 6.5%;
         font-size: 20px;
     }
     #game-text2 {
@@ -110,7 +111,7 @@ h2 {
 @media screen and (max-width: 400px) {
     .game-section {
         width: 350px;
-        margin-top: 25%;
+        margin-top: 20%;
     }
     .logo {
         margin-left: 7%;
@@ -119,7 +120,7 @@ h2 {
         padding: 55px;
     }
     #game-text {
-        margin-left: 4.5%;
+        margin-left: 2.5%;
         font-size: 15px;
     }
     #game-text2 {

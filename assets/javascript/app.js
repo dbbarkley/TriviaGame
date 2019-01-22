@@ -26,7 +26,7 @@ var myQuestions = [
 			a: 'Star Prison',
 			b: 'Big House',
 			c: 'The Kyln',
-			d: 'The Daeth Star'
+			d: 'The Death Star'
 		},
     },
     {
