@@ -112,8 +112,8 @@ function startGame () {
 			// add an html radio button
 			possibleAnswers.push( 
 				'<label>'
-					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
-					+ letter + ': '
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'"> '
+					+ letter + ' : '
 					+ myQuestions[i].possibleAnswers[letter]
 				+'</label>' + "<br>" 
 			);
@@ -157,13 +157,13 @@ function showResults () {
 
 		if (userpossibleAnswers[i] === answers[i]) {
 			numCorrect++;
-			$("#correct").html("<h3>Correct possibleAnswers: "+numCorrect+"</h3>");
+			$("#correct").html("<h3>Correct Answers: "+numCorrect+"</h3>");
 		} 		else if (userpossibleAnswers[i] === undefined){
 			  		numUnanswered++;
 					$("#unanswered").html("<h3>Unanswered: "+numUnanswered+"</h3>");
 				}		else if (userpossibleAnswers[i] !== answers[i]) {
 							numIncorrect++;
-							$("#incorrect").html("<h3>Incorrect possibleAnswers: "+numIncorrect+"</h3>");
+							$("#incorrect").html("<h3>Incorrect Answers: "+numIncorrect+"</h3>");
 						};
 	};
 };

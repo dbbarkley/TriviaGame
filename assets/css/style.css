@@ -73,3 +73,57 @@ h2 {
     text-align: center;
 }
 /* Media Queries*/
+@media screen and (max-width: 768px) {
+    .game-section {
+        width: 650px;
+    }
+    .logo {
+        margin-left: 3.5%;
+        width: 91%;
+    }
+    #game-text {
+        margin-left: 9.5%;
+    }
+    #game-text2 {
+        margin-left: 25%; 
+    }
+}
+@media screen and (max-width: 580px) {
+    .game-section {
+        width: 450px;
+    }
+    .logo {
+        margin-left: 5.5%;
+        width: 90%;
+        background: url("../images/logo-3.png");
+        padding: 75px;
+    }
+    #game-text {
+        margin-left: 8.5%;
+        font-size: 20px;
+    }
+    #game-text2 {
+        margin-left: 25%;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .game-section {
+        width: 350px;
+        margin-top: 25%;
+    }
+    .logo {
+        margin-left: 7%;
+        width: 87%;
+        background: url("../images/logo-4.png");
+        padding: 55px;
+    }
+    #game-text {
+        margin-left: 4.5%;
+        font-size: 15px;
+    }
+    #game-text2 {
+        margin-left: 23%;
+        font-size: 15px;
+    }
+}
