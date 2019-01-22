@@ -77,7 +77,7 @@ var myQuestions = [
 ];
 
 // Timer functions ===================================================================
-var timer = 45;
+var timer = 60;
 var intervalId;
 
 function runTimer () {
